@@ -1,0 +1,13 @@
+RewriteEngine On
+# Запрет выдачи листинга пустого каталога
+Options -Indexes
+
+# По умолчанию файлы
+DirectoryIndex index.php
+
+RedirectMatch 403 /\..*$
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} !index
+RewriteRule (.*) index.php [L]
