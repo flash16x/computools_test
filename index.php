@@ -3,7 +3,7 @@
 $link = mysqli_connect('localhost', 'root', '', 'db')
 or die("Ошибка " . mysqli_error($link));
 
-$query = 'select * from `categories` order by `parent_id` asc';
+$query = 'select * from `categories`';
 $res = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
 
 $parents = [];
